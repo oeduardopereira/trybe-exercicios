@@ -1,7 +1,0 @@
-blue
-branco
-eduardo  tty2         2023-03-15 21:05 (tty2)
-marrom
-orange
-preto
-yellow
