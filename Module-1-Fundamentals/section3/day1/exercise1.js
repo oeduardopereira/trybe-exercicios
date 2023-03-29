@@ -1,8 +1,13 @@
-let word = 'trybe';
- let temp = "";
+let array = ['java', 'javascript', 'python', 'html', 'css'];
+let smaller = array[0], bigger = array[0];
 
-for(let i = word.length - 1; i >= 0; i--){
-    temp += word[i];
+for(let i = 0; i < array.length; i++){
+    if (array[i].length > bigger.length ){
+        bigger = array[i];
+    }else if (array[i].length < smaller.length){
+        smaller = array[i];
+    }
 }
 
-console.log(temp);
+console.log("Smaller: ",smaller);
+console.log("Bigger: ", bigger);
