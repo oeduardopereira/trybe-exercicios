@@ -1,6 +1,8 @@
-let factor = 10;
+let word = 'trybe';
+ let temp = "";
 
-for (let i = factor - 1; i > 0; i--){
-    factor *= i;
+for(let i = word.length - 1; i >= 0; i--){
+    temp += word[i];
 }
-console.log(factor);
+
+console.log(temp);
