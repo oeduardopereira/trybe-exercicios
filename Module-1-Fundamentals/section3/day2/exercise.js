@@ -1,13 +1,13 @@
-let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+// resultado esperado:
+let n =[5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+let arr = [];
 
-for (let i = 1; i < numbers.length; i++) {
-    for (let j = 0; j < numbers.length;j++) {
-      if (numbers[j] > numbers[j + 1]) {
-        let temp = numbers[j];
-        numbers[j] = numbers[j + 1];
-        numbers[j + 1] = temp;
-      }
+for (let i = 0; i < n.length; i++){
+    if(i === n.length - 1){
+        arr.push(n[i] * 2);
+    }else{
+        arr.push(n[i] * n[i + 1]);
     }
-  }
+}
 
-console.log(numbers);
+console.log(arr);
