@@ -1,9 +1,6 @@
-let numbers = [];
+let factor = 10;
 
-for (let i = 1; i <= 25; i++){
-    numbers.push(i);
-} 
-
-for(let j = 0; j < numbers.length; j++){
-    console.log(numbers[j] / 2);
+for (let i = factor - 1; i > 0; i--){
+    factor *= i;
 }
+console.log(factor);
