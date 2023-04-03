@@ -42,8 +42,18 @@ function customerInfo(order) {
 
 customerInfo(order);
 
+console.log();
+
+order.name = 'Luiz Silva';
+order.payment.total = 50;
+
 function orderModifier(order) {
-  // Adicione abaixo as informações necessárias.
+  let pizzas = Object.keys(order.order.pizza);
+
+
+  console.log('Ola, ' + order.name + ', o valor total de seu pedido de ' + 
+  pizzas[0] + ', ' + pizzas[1] + ' e ' + order.order.drinks.coke.type +
+  ' e R$' + order.payment.total);
 }
 
 orderModifier(order);
