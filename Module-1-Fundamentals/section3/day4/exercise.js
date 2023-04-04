@@ -22,10 +22,16 @@ let lesson3 = {
 let allLessons = Object.assign({}, {lesson1: lesson1, 
   lesson2: lesson2, lesson3: lesson3});
 
-function getValueByNumber(obj, key) {
-  let values = Object.values(obj);
-  let value = values[key];
-  return value;
+function getValueByNumber(obj, key, value) {
+  let isEqual = false;
+  let entries = Object.entries(obj);
+
+  for (let i in entries) {
+    if (key === entries[i][0] && value === entries[i][1]) {
+      isEqual = true;
+    }
+  }
+  return isEqual;
 }
 
-console.log(getValueByNumber(lesson1, 0));
+console.log(getValueByNumber(lesson1, 'professor', 'Maria Clara'));
