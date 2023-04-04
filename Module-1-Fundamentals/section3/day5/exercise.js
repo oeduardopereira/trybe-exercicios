@@ -11,5 +11,18 @@ const substituaX = (name) => {
     return phraseJoinned;
 }
 
-let eu = 'Eduardo Pereira Filho';
-console.log(substituaX(eu));
+function minhasSkills (func1Return) {
+    const skills = ['CSS', 'HTML', 'GIT'];
+    let phrase = `
+    ${func1Return}
+
+    Minhas tres principais habilidades sao:`;
+    for (let i = 0; i < skills.length; i += 1) {
+        phrase = `${phrase} 
+        - ${skills[i]}`;
+    }
+    return phrase;
+}
+
+console.log(minhasSkills(substituaX('Duzao')));
+
