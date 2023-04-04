@@ -18,12 +18,8 @@ let lesson3 = {
   turno: 'noite',
 };
 
-function addTurnLesson2(obj, key, value) {
-  obj[key] = value;
-  console.log(obj);
+function listObj(obj) {
+  console.log(Object.keys(obj));
 }
 
-let turno = 'turno';
-let noite = 'noite';
-
-addTurnLesson2(lesson2, turno, noite);
+listObj(lesson1);
