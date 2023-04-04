@@ -22,16 +22,10 @@ let lesson3 = {
 let allLessons = Object.assign({}, {lesson1: lesson1, 
   lesson2: lesson2, lesson3: lesson3});
 
-//console.log(allLessons);
-
-function stds(obj) {
-  let sum = 0;
-
-  for (let i in obj) {
-    sum += obj[i].numeroEstudantes;
-  }
-  return sum;
+function getValueByNumber(obj, key) {
+  let values = Object.values(obj);
+  let value = values[key];
+  return value;
 }
 
-console.log(stds(allLessons));
-
+console.log(getValueByNumber(lesson1, 0));
