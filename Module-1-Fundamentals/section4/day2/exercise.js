@@ -6,3 +6,4 @@ firstChildOfChild.innerText = 'adjhdaksdjbdjkabd dkjabdakdbdk  adbadjabsd adbdkd
 
 const parentOfFirstChild = document.getElementById('parent').firstElementChild;
 parentOfFirstChild.innerText = 'First child by parent';
+
