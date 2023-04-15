@@ -1,0 +1,28 @@
+h1 {
+    font-family: sans-serif;
+}
+
+p {
+    font-weight: 600px;
+    font-size: 3em;
+    font-family: monospace;
+    text-align: center;
+}
+
+body{ 
+    font-size: 16px;
+}
+
+#stl {
+    line-height: 60px;
+    text-decoration: underline;
+}
+
+#h1Index {
+    size: 65px;
+    color: orange;
+}
+
+#ul {
+    background-color: pink;
+}
