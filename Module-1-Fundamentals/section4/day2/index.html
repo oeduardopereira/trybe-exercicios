@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // COLOQUE SEU CÓDIGO AQUI
+
+      // 1
+      const addTagH1 = document.createElement('h1');
+      addTagH1.innerHTML = 'TrybeTrip - Agência de Viagens';
+      document.body.appendChild(addTagH1);
+
+      // 2
+      const addTagMain = document.createElement('main');
+      addTagMain.className = 'main-content';
+      document.body.appendChild(addTagMain);
+
+      // 3
+      const addTagSection = document.createElement('section');
+      addTagSection.className = 'center-content';
+      addTagMain.appendChild(addTagSection);
+
+      // 4
+      const addTagP = document.createElement('p');
+      addTagP.innerText = 'Da uma sugada aqui!';
+      addTagSection.appendChild(addTagP);
+
+      // 5
+      const addTagSectionLeft = document.createElement('section');
+      addTagSectionLeft.className = 'left-content';
+      addTagMain.appendChild(addTagSectionLeft);
+
+      // 6
+      const addTagSectionRight = document.createElement('section');
+      addTagSectionRight.className = 'right-content';
+      addTagMain.appendChild(addTagSectionRight);
+
+      // 7
+      const addTagImage = document.createElement('img');
+      addTagImage.src = 'https://picsum.photos/200';
+      addTagImage.className = 'small-image';
+      addTagSectionLeft.appendChild(addTagImage);
+
+      // 8
+      const numbers = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+      const addTagUl = document.createElement('ul');
+     
+      for (let i = 0; i < numbers.length; i += 1) {
+        const listItem = document.createElement('li');
+        listItem.innerText = numbers[i];
+        addTagUl.appendChild(listItem);
+      };
+      addTagSectionRight.appendChild(addTagUl);
+
+      //9
+      const mainChildreLength = addTagMain.children.length;
+      for (let i = 0; i < mainChildreLength; i += 1) {
+        const tagH3 = document.createElement('h3');
+        tagH3.innerText = i;
+        addTagMain.appendChild(tagH3);
+      };
+
+      // Bonus
+      // 1
+      addTagH1.className = 'title';
+
+      // 2
+      const getTagH3 = document.querySelectorAll('h3');
+      const getTagH3Length = getTagH3.length;
+
+      for (let i = 0; i < getTagH3Length; i += 1) {
+        getTagH3[i].className = 'description';
+      };
+
+      // 3
+      const parentLeftSection = addTagSectionLeft.parentElement;
+      parentLeftSection.removeChild(addTagSectionLeft);
+
+      // 4
+      addTagSectionRight.style.marginRight = 'auto';
+
+      // 5
+      const parentSecitonCenter = addTagSection.parentElement;
+      parentSecitonCenter.style.backgroundColor = 'green';
+
+      // 6
+
+      const parentUl = document.getElementsByTagName('ul')[0];
+      // const nodesFromParentUl = parentUl.childNodes;
+      // for (let i = nodesFromParentUl.length - 1; i > 0; i += 1) {
+      //   const node = nodesFromParentUl[i].innerText;
+      //   if (node === 'nove' || node === 'dez') {
+      //     parentUl.removeChild(nodesFromParentUl[i]);
+      //   }
+      // }
+
+      parentUl.lastChild.remove();
+      parentUl.lastChild.remove();
+
+    </script> 
+  </body>
+</html>
