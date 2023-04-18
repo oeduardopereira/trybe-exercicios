@@ -1,38 +1,22 @@
-const button = document.getElementById('add-button');
-const input = document.getElementById('phrases-input');
-const list = document.getElementById('phrases-list');
+window.onload = () => {
 
-const insertPhraseInDOM = () => {
-  const phrasesList = JSON.parse(localStorage.getItem('phrases'));
-  const listLength = phrasesList.length - 1;
-  const phraseText = phrasesList[listLength];
-  const phrase = document.createElement('li');
-  phrase.innerText = phraseText;
-  list.appendChild(phrase);
-}
+    const setBackgroundColor = (color) => {
+        const paragram = document.querySelector('.content');
+        paragram.style.backgroundColor = color;
+        localStorage.setItem('backgroundColor', color);
+    };
 
-const addPhraseToLocalStorage = () => {
-  const oldList = JSON.parse(localStorage.getItem('phrases'));
-  const phraseText = input.value;
-  oldList.push(phraseText);
-  localStorage.setItem('phrases', JSON.stringify(oldList));
-  insertPhraseInDOM();
-}
-
-const initialRendering = () => {
-  if (localStorage.getItem('phrases') === null) {
-    localStorage.setItem('phrases', JSON.stringify([]));
-  } else {
-    const phrasesList = JSON.parse(localStorage.getItem('phrases'));
-    const listLength = phrasesList.length - 1;
-    for (let index = 0; index <= listLength; index += 1) {
-      const listElement = document.createElement('li');
-      listElement.innerText = phrasesList[index];
-      list.appendChild(listElement);
+    // return the color of the button selected
+    const backgroundColorBTN = document.querySelectorAll('#background-color>button');
+    for (let i = 0; i < backgroundColorBTN.length; i += 1) {
+        backgroundColorBTN[i].addEventListener('click', (event) => {
+        setBackgroundColor(event.target.innerHTML);
+    });
     }
-  }
+
+    const initialize = () => {
+        let backgroundColor = localStorage.getItem("backgroundColor")
+        if (backgroundColor) setBackgroundColor(backgroundColor);
+    }
+    initialize();
 }
-
-button.addEventListener('click', addPhraseToLocalStorage);
-
-window.onload = () => initialRendering();
